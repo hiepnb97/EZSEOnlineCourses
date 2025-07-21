@@ -45,42 +45,33 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/home">Home</a>
-                        </li>
+                    <ul class="navbar-nav ms-auto">
                         <c:if test="${sessionScope.user != null}">
                             <li class="nav-item">
                                 <a class="nav-link" href="${pageContext.request.contextPath}/cart">
                                     <i class="fas fa-shopping-cart"></i> Cart
                                 </a>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                    <i class="fas fa-user"></i> ${sessionScope.user.fullName}
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/profile">Profile</a></li>
+                                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/orders">My Orders</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Logout</a></li>
+                                </ul>
+                            </li>
                         </c:if>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <c:choose>
-                            <c:when test="${sessionScope.user != null}">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                        <i class="fas fa-user"></i> ${sessionScope.user.fullName}
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/profile">Profile</a></li>
-                                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/orders">My Orders</a></li>
-                                        <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Logout</a></li>
-                                    </ul>
-                                </li>
-                            </c:when>
-                            <c:otherwise>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="${pageContext.request.contextPath}/login">Login</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="${pageContext.request.contextPath}/register">Register</a>
-                                </li>
-                            </c:otherwise>
-                        </c:choose>
+                        <c:if test="${sessionScope.user == null}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="${pageContext.request.contextPath}/login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="${pageContext.request.contextPath}/register">Register</a>
+                            </li>
+                        </c:if>
                     </ul>
                 </div>
             </div>
