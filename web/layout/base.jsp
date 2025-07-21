@@ -111,9 +111,9 @@
                     <div class="col-md-4">
                         <h5>Contact Us</h5>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-envelope"></i> support@ezse.com</li>
+                            <li><i class="fas fa-envelope"></i> support@ezse.net</li>
                             <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                            <li><i class="fas fa-map-marker-alt"></i> 123 Main St, City, Country</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Fukuoka, Japan</li>
                         </ul>
                     </div>
                 </div>
