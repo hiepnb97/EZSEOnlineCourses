@@ -20,6 +20,13 @@ public class HomeServlet extends HttpServlet {
         CourseDAO courseDAO = new CourseDAO();
         CategoryDAO categoryDAO = new CategoryDAO();
         
+        // Get featured courses (first 4 courses)
+        List<Course> featuredCourses = courseDAO.getAllCourses();
+        if (featuredCourses.size() > 4) {
+            featuredCourses = featuredCourses.subList(0, 4);
+        }
+        request.setAttribute("featuredCourses", featuredCourses);
+        
         // Get search parameters
         String keyword = request.getParameter("keyword");
         String categoryIDStr = request.getParameter("categoryID");
@@ -37,6 +44,8 @@ public class HomeServlet extends HttpServlet {
         List<Course> courses;
         if (keyword != null && !keyword.trim().isEmpty() || categoryID > 0) {
             courses = courseDAO.searchCourses(keyword != null ? keyword : "", categoryID);
+            // Add flag to indicate search was performed
+            request.setAttribute("isSearch", true);
         } else {
             courses = courseDAO.getAllCourses();
         }

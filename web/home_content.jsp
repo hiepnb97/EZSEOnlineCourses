@@ -161,7 +161,7 @@
                     </div>
                     <div class="col-4">
                         <div class="stat-item">
-                            <div class="stat-number">2</div>
+                            <div class="stat-number">3</div>
                             <div class="stat-label">Experts</div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                             <!-- First Slide -->
                             <div class="carousel-item active">
                                 <div class="row">
-                                    <c:forEach items="${courses}" var="course" begin="0" end="1">
+                                    <c:forEach items="${featuredCourses}" var="course" begin="0" end="1">
                                         <div class="col-md-6">
                                             <div class="featured-course">
                                                 <img src="${course.imageURL != null ? course.imageURL : 'https://via.placeholder.com/300x200'}" 
@@ -204,7 +204,7 @@
                             <!-- Second Slide -->
                             <div class="carousel-item">
                                 <div class="row">
-                                    <c:forEach items="${courses}" var="course" begin="2" end="3">
+                                    <c:forEach items="${featuredCourses}" var="course" begin="2" end="3">
                                         <div class="col-md-6">
                                             <div class="featured-course">
                                                 <img src="${course.imageURL != null ? course.imageURL : 'https://via.placeholder.com/300x200'}" 
@@ -259,6 +259,18 @@
         </form>
     </div>
 </div>
+
+<!-- Add this right after the search form -->
+<c:if test="${not empty isSearch}">
+    <script>
+        window.onload = function() {
+            document.getElementById('courses').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    </script>
+</c:if>
 
 <!-- Course List -->
 <div class="row row-cols-1 row-cols-md-3 g-4">
