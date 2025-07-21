@@ -252,9 +252,127 @@
                 object-fit: cover;
             }
             .footer {
-                background-color: #f8f9fa;
-                padding: 2rem 0;
+                background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                color: white;
+                padding: 4rem 0 2rem 0;
+                margin-top: 4rem;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .footer::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: var(--accent-color);
+            }
+            
+            .footer h5 {
+                color: var(--accent-color);
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+                font-size: 1.2rem;
+            }
+            
+            .footer p {
+                opacity: 0.9;
+                line-height: 1.8;
+            }
+            
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .footer-links li {
+                margin-bottom: 1rem;
+            }
+            
+            .footer-links a {
+                color: white;
+                text-decoration: none;
+                opacity: 0.9;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+            }
+            
+            .footer-links a:hover {
+                color: var(--accent-color);
+                opacity: 1;
+                transform: translateX(5px);
+            }
+            
+            .footer-links i {
+                margin-right: 0.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .footer-contact {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .footer-contact li {
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+            }
+            
+            .footer-contact i {
+                width: 30px;
+                height: 30px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 1rem;
+                color: var(--accent-color);
+            }
+            
+            .footer-bottom {
                 margin-top: 3rem;
+                padding-top: 2rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                text-align: center;
+            }
+            
+            .footer-bottom p {
+                margin: 0;
+                opacity: 0.8;
+                font-size: 0.9rem;
+            }
+            
+            .social-links {
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            
+            .social-links a:hover {
+                background: var(--accent-color);
+                color: var(--primary-color);
+                transform: translateY(-3px);
             }
         </style>
     </head>
@@ -322,31 +440,75 @@
         <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
                         <h5>About EZSE Courses</h5>
-                        <p>We provide high-quality online courses to help you advance your career and achieve your goals.</p>
+                        <p>Discover a world of knowledge with our expert-led online courses. We're dedicated to helping you achieve your goals through high-quality education and practical learning experiences.</p>
+                        <div class="social-links">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
                         <h5>Quick Links</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="${pageContext.request.contextPath}/home" class="text-decoration-none">Home</a></li>
-                            <li><a href="#" class="text-decoration-none">About Us</a></li>
-                            <li><a href="#" class="text-decoration-none">Contact</a></li>
-                            <li><a href="#" class="text-decoration-none">Terms of Service</a></li>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/home">
+                                    <i class="fas fa-chevron-right"></i> Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-chevron-right"></i> Browse Courses
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-chevron-right"></i> About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-chevron-right"></i> Contact
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-chevron-right"></i> Terms of Service
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-chevron-right"></i> Privacy Policy
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <h5>Contact Us</h5>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-envelope"></i> support@ezse.com</li>
-                            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                            <li><i class="fas fa-map-marker-alt"></i> 123 Main St, City, Country</li>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Fukuoka, Japan</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <span>+1 234 567 890</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>support@ezse.net</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Monday - Friday: 9:00 AM - 6:00 PM</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <hr>
-                <div class="text-center">
-                    <p>&copy; 2024 EZSE Courses. All rights reserved.</p>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 EZSE Courses. All rights reserved. | Empowering learners worldwide</p>
                 </div>
             </div>
         </footer>
