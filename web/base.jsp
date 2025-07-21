@@ -110,7 +110,7 @@
                 </div>
                 <hr>
                 <div class="text-center">
-                    <p>&copy; 2024 EZSE Courses. All rights reserved.</p>
+                    <p>&copy; 2025 EZSE Courses. All rights reserved.</p>
                 </div>
             </div>
         </footer>
