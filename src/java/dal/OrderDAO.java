@@ -49,6 +49,41 @@ public class OrderDAO extends DBContext {
         return list;
     }
     
+    public Order getOrderById(int orderID) {
+        String sql = "SELECT o.*, u.* FROM [Order] o " +
+                    "JOIN [User] u ON o.UserID = u.UserID " +
+                    "WHERE o.OrderID = ?";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, orderID);
+            ResultSet rs = st.executeQuery();
+            
+            if (rs.next()) {
+                Order order = new Order();
+                order.setOrderID(rs.getInt("OrderID"));
+                order.setUserID(rs.getInt("UserID"));
+                order.setOrderDate(rs.getDate("OrderDate"));
+                order.setTotalAmount(rs.getDouble("TotalAmount"));
+                order.setStatus(rs.getString("Status"));
+                
+                User user = new User();
+                user.setUserID(rs.getInt("UserID"));
+                user.setUsername(rs.getString("Username"));
+                user.setFullName(rs.getString("FullName"));
+                user.setEmail(rs.getString("Email"));
+                user.setPhone(rs.getString("Phone"));
+                user.setAddress(rs.getString("Address"));
+                
+                order.setUser(user);
+                order.setOrderDetails(getOrderDetails(order.getOrderID()));
+                return order;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        return null;
+    }
+    
     public List<OrderDetail> getOrderDetails(int orderID) {
         List<OrderDetail> list = new ArrayList<>();
         String sql = "SELECT od.*, c.* FROM OrderDetail od " +
