@@ -16,8 +16,139 @@
                 --primary-color: #1e3c72;
                 --secondary-color: #2a5298;
                 --accent-color: #ffd700;
+                --gradient-primary: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                --gradient-secondary: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
             }
             
+            .btn-primary {
+                background: var(--gradient-primary);
+                border: none;
+                color: white;
+                padding: 0.6rem 1.2rem;
+                border-radius: 8px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            
+            .btn-primary:hover {
+                background: var(--gradient-secondary);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
+            }
+            
+            .btn-outline-primary {
+                color: var(--primary-color);
+                border: 2px solid var(--primary-color);
+                padding: 0.6rem 1.2rem;
+                border-radius: 8px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                background: transparent;
+            }
+            
+            .btn-outline-primary:hover {
+                background: var(--gradient-primary);
+                border-color: transparent;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
+            }
+            
+            .btn-secondary {
+                background: var(--accent-color);
+                border: none;
+                color: var(--primary-color);
+                padding: 0.6rem 1.2rem;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            
+            .btn-secondary:hover {
+                background: #ffed4a;
+                color: var(--primary-color);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+            }
+            
+            .btn-outline-secondary {
+                color: var(--secondary-color);
+                border: 2px solid var(--secondary-color);
+                padding: 0.6rem 1.2rem;
+                border-radius: 8px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                background: transparent;
+            }
+            
+            .btn-outline-secondary:hover {
+                background: var(--gradient-secondary);
+                border-color: transparent;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
+            }
+            
+            .btn-danger {
+                background: #dc3545;
+                border: none;
+                color: white;
+                padding: 0.6rem 1.2rem;
+                border-radius: 8px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            
+            .btn-danger:hover {
+                background: #bb2d3b;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+            }
+            
+            .btn-outline-danger {
+                color: #dc3545;
+                border: 2px solid #dc3545;
+                padding: 0.6rem 1.2rem;
+                border-radius: 8px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                background: transparent;
+            }
+            
+            .btn-outline-danger:hover {
+                background: #dc3545;
+                border-color: #dc3545;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+            }
+            
+            .btn-sm {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.875rem;
+            }
+            
+            .btn-lg {
+                padding: 0.8rem 1.6rem;
+                font-size: 1.1rem;
+            }
+            
+            .badge {
+                padding: 0.5rem 0.8rem;
+                border-radius: 6px;
+                font-weight: 500;
+            }
+            
+            .badge.bg-primary {
+                background: var(--gradient-primary) !important;
+            }
+            
+            .badge.bg-secondary {
+                background: var(--accent-color) !important;
+                color: var(--primary-color);
+            }
+            
+            /* Rest of the existing styles */
             .navbar {
                 background: rgba(255, 255, 255, 0.95) !important;
                 backdrop-filter: blur(10px);
@@ -56,7 +187,7 @@
             }
             
             .nav-link.active {
-                background: var(--primary-color);
+                background: var(--gradient-primary);
                 color: white !important;
             }
             

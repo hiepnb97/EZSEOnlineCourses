@@ -161,13 +161,13 @@
                     </div>
                     <div class="col-4">
                         <div class="stat-item">
-                            <div class="stat-number">50+</div>
+                            <div class="stat-number">2</div>
                             <div class="stat-label">Experts</div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="stat-item">
-                            <div class="stat-number">10K+</div>
+                            <div class="stat-number">3K+</div>
                             <div class="stat-label">Students</div>
                         </div>
                     </div>
