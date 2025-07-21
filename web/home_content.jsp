@@ -78,6 +78,7 @@
     
     .featured-course-content {
         padding: 1rem;
+        min-height: 120px;
     }
     
     .featured-course-title {
@@ -140,7 +141,7 @@
 <section class="hero-section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="col-lg-6 mb-4 mb-lg-0 px-3">
                 <h1 class="hero-title">Transform Your Future with Online Learning</h1>
                 <p class="hero-subtitle">
                     Discover expert-led courses designed to help you master new skills 
